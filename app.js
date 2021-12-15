@@ -1,12 +1,14 @@
 var Reader = require("./Reader");
+var Writer = require("./Whiter");
 var Processor = require("./Processor");
 var Table = require("./Table");
 var HtmlParser = require("./HtmlParser");
 
-var read = new Reader();
+var reader = new Reader();
+var writer = new Writer();
 
 async function main() {
-  var dados = await read.Read("./users.csv");
+  var dados = await reader.Read("./users.csv");
   var dadosProcessados = Processor.Process(dados);
 
   var usuarios = new Table(dadosProcessados);
@@ -19,6 +21,8 @@ async function main() {
   // console.log(usuarios.columnCount);
 
   var html = await HtmlParser.Parse(usuarios);
+
+  writer.whrite("./fs/" + Date.now() + ".html", html); // gera o arquivo dentro do path fs
   console.log(html);
 }
 
