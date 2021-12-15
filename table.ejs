@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <!-- usando for -->
+        <% for(i = 0; i <= header.length; i++) { %>
+        <th><%= header[i] %></th>
+        <% } %>
+      </thead>
+      <tbody>
+        <!-- usando forEach -->
+        <% rows.forEach(row => { %>
+        <tr>
+          <% row.forEach(element => { %>
+          <td><%= element %></td>
+          <% }) %>
+        </tr>
+        <% }) %>
+        <td></td>
+      </tbody>
+    </table>
+  </body>
+</html>
