@@ -4,7 +4,7 @@ class Processor {
     var rows = [];
 
     datasCSV.forEach((row) => {
-      var arr = row.split(",");
+      var arr = row.split(";");
       rows.push(arr);
     });
     return rows;
