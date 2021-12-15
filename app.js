@@ -2,4 +2,11 @@ var Reader = require("./Reader");
 
 var read = new Reader();
 
-read.Read("./users.csv");
+async function main() {
+  var data = await read.Read("./users.csv");
+  // var dataConvertToJSON = JSON.parse(data);
+
+  console.log(data);
+}
+
+main();
