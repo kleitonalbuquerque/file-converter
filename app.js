@@ -1,5 +1,6 @@
 var Reader = require("./Reader");
 var Writer = require("./Whiter");
+var PDFWriter = require("./PDFWriter");
 var Processor = require("./Processor");
 var Table = require("./Table");
 var HtmlParser = require("./HtmlParser");
@@ -23,6 +24,7 @@ async function main() {
   var html = await HtmlParser.Parse(usuarios);
 
   writer.whrite("./fs/" + Date.now() + ".html", html); // gera o arquivo dentro do path fs
+  PDFWriter.writePDF("./fs/" + Date.now() + ".pdf", html);
   console.log(html);
 }
 
