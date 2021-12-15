@@ -10,8 +10,12 @@ async function main() {
 
   var usuarios = new Table(dadosProcessados);
 
+  usuarios.rows.push(["Luiz Paulo", "Formação Linux", "SO", "12"]);
+
   // console.log(usuarios.header);
   console.log(usuarios.rows);
+  console.log(usuarios.rowCount);
+  console.log(usuarios.columnCount);
 }
 
 main();
